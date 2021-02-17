@@ -13,5 +13,7 @@
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Include="Binaries\windows_64\nuklear.dll" />
+      <None Remove="Binaries\linux_64\libnuklear.so" />
+      <EmbeddedResource Include="Binaries\linux_64\libnuklear.so" />
     </ItemGroup>
 </Project>
