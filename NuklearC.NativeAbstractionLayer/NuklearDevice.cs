@@ -22,7 +22,7 @@ namespace NuklearC.NativeAbstractionLayer
         {
         }
 
-        public virtual void FontStash(IntPtr Atlas)
+        public virtual void FontStash(IntPtr atlas)
         {
         }
 
@@ -34,7 +34,7 @@ namespace NuklearC.NativeAbstractionLayer
         {
         }
 
-        public void OnMouseButton(NuklearEvent.MouseButton button, int x, int y, bool down)
+        public void OnMouseButton(NuklearEvent.MouseButton button, int x, int y, bool isDown)
         {
             Events.Enqueue(new NuklearEvent
             {
@@ -42,7 +42,7 @@ namespace NuklearC.NativeAbstractionLayer
                 Button = button,
                 X = x,
                 Y = y,
-                Down = down
+                IsDown = isDown
             });
         }
 
@@ -77,11 +77,11 @@ namespace NuklearC.NativeAbstractionLayer
 
         public void OnKey(nk_keys Key, bool isDown)
         {
-            Events.Enqueue(new NuklearEvent()
+            Events.Enqueue(new NuklearEvent
             {
                 Type = NuklearEvent.EventType.KeyboardKey,
                 Key = Key,
-                Down = isDown
+                IsDown = isDown
             });
         }
 

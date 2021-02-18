@@ -9,7 +9,7 @@ namespace NuklearC.NativeAbstractionLayer
         
         public nk_keys Key;
         public int X, Y;
-        public bool Down;
+        public bool IsDown;
         public float ScrollX, ScrollY;
         public string Text;
         

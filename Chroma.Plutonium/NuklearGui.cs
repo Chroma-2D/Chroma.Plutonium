@@ -8,27 +8,24 @@ namespace Chroma.Plutonium
 {
     public static class NuklearGui
     {
-        private static IntPtr Context => NuklearAPI.Context;
-        
-        public static void Frame(Action render)
-            => NuklearAPI.Frame(render);
-
         public static void StaticRowLayout(float height, int childWidth, int columns)
-            => NuklearAPI.LayoutRowStatic(height, childWidth, columns);
+            => NuklearUI.LayoutRowStatic(height, childWidth, columns);
 
         public static void DynamicRowLayout(float height = 0, int columns = 1)
-            => NuklearAPI.LayoutRowDynamic(height, columns);
-        
+            => NuklearUI.LayoutRowDynamic(height, columns);
+
         public static bool Window(string name, string title, Vector2 position, Size size, PanelFlags flags,
             Action render)
         {
-            return NuklearAPI.Window(
+            return NuklearUI.Window(
                 name,
                 title,
-                position.X,
-                position.Y,
-                size.Width,
-                size.Height,
+                new RectangleF(
+                    position.X,
+                    position.Y,
+                    size.Width,
+                    size.Height
+                ),
                 (nk_panel_flags)flags,
                 render
             );
@@ -36,7 +33,7 @@ namespace Chroma.Plutonium
 
         public static bool Window(string title, Vector2 position, Size size, PanelFlags flags, Action render)
         {
-            return NuklearAPI.Window(
+            return NuklearUI.Window(
                 title,
                 position.X,
                 position.Y,
@@ -48,20 +45,20 @@ namespace Chroma.Plutonium
         }
 
         public static bool IsWindowClosed(string name)
-            => NuklearAPI.WindowIsClosed(name);
+            => NuklearUI.WindowIsClosed(name);
 
         public static bool IsWindowHidden(string name)
-            => NuklearAPI.WindowIsHidden(name);
+            => NuklearUI.WindowIsHidden(name);
 
         public static bool IsWindowCollapsed(string name)
-            => NuklearAPI.WindowIsCollapsed(name);
+            => NuklearUI.WindowIsCollapsed(name);
 
         public static RectangleF GetWindowBounds()
-            => NuklearAPI.WindowGetBounds();
+            => NuklearUI.WindowGetBounds();
 
         public static bool Group(string name, string title, PanelFlags flags, Action render)
         {
-            return NuklearAPI.Group(
+            return NuklearUI.Group(
                 name,
                 title,
                 (nk_panel_flags)flags,
@@ -71,9 +68,9 @@ namespace Chroma.Plutonium
 
         public static bool Group(string name, PanelFlags flags, Action render)
         {
-            return NuklearAPI.Group(
-                name, 
-                (nk_panel_flags)flags, 
+            return NuklearUI.Group(
+                name,
+                (nk_panel_flags)flags,
                 render
             );
         }
@@ -82,39 +79,39 @@ namespace Chroma.Plutonium
         {
             return mode switch
             {
-                ButtonMode.Label => NuklearAPI.ButtonLabel(content),
-                ButtonMode.Text => NuklearAPI.ButtonLabel(content),
+                ButtonMode.Label => NuklearUI.ButtonLabel(content),
+                ButtonMode.Text => NuklearUI.ButtonLabel(content),
                 _ => throw new NotSupportedException("Unsupported button mode.")
             };
         }
 
         public static void LabelWrapped(string text)
         {
-            NuklearAPI.LabelWrap(text);
+            NuklearUI.LabelWrap(text);
         }
 
         public static void LabelWrapped(string text, Color color)
         {
-            NuklearAPI.LabelColoredWrap(
-                text, 
-                color.R, 
-                color.G, 
-                color.B, 
+            NuklearUI.LabelColoredWrap(
+                text,
+                color.R,
+                color.G,
+                color.B,
                 color.A
             );
         }
-        
+
         public static void Label(string text, TextAlignment textAlignment)
         {
-            NuklearAPI.Label(
-                text, 
+            NuklearUI.Label(
+                text,
                 (nk_text_align)textAlignment
             );
         }
 
         public static void Label(string text, TextAlignment textAlignment, Color color)
         {
-            NuklearAPI.LabelColored(
+            NuklearUI.LabelColored(
                 text,
                 color.R,
                 color.G,

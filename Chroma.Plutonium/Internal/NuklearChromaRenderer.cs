@@ -32,13 +32,7 @@ namespace Chroma.Plutonium.Internal
 
         public override void Render(nk_handle udata, Texture texture, nk_rect clipRect, uint offset, uint count)
         {
-            Scissor = new Rectangle(
-                (int)clipRect.X,
-                (int)clipRect.Y,
-                (int)clipRect.W,
-                (int)clipRect.H
-            );
-            
+            Scissor = clipRect;
             Texture = texture;
         }
 
@@ -52,10 +46,10 @@ namespace Chroma.Plutonium.Internal
                 list.Add(vertexBuffer[i].position.y);
                 list.Add(vertexBuffer[i].uv.x);
                 list.Add(vertexBuffer[i].uv.y);
-                list.Add(vertexBuffer[i].color.R / 255f);
-                list.Add(vertexBuffer[i].color.G / 255f);
-                list.Add(vertexBuffer[i].color.B / 255f);
-                list.Add(vertexBuffer[i].color.A / 255f);
+                list.Add(vertexBuffer[i].color.r / 255f);
+                list.Add(vertexBuffer[i].color.g / 255f);
+                list.Add(vertexBuffer[i].color.b / 255f);
+                list.Add(vertexBuffer[i].color.a / 255f);
             }
 
             VertexCount = (ushort)vertexBuffer.Length;

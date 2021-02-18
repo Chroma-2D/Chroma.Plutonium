@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Chroma.Graphics;
 using Chroma.Input;
 using Chroma.Plutonium.Internal;
@@ -33,18 +34,22 @@ namespace Chroma.Plutonium
             {MouseButton.Middle, NuklearEvent.MouseButton.Middle}
         };
 
+        private static NuklearRenderer _nuklear;
         private static NuklearChromaRenderer _renderer;
-
+        
         public static void Initialize()
         {
             _renderer = new NuklearChromaRenderer();
-            NuklearAPI.Init(_renderer);
+            _nuklear = new NuklearRenderer(_renderer);
             
-            NuklearAPI.SetClipboardCallback(
+            NuklearUI.SetClipboardCallback(
                 (s) => { Clipboard.Text = s; },
                 () => Clipboard.Text
             );
         }
+
+        public static void Begin(Action renderActions)
+            => _nuklear.Frame(renderActions);
 
         public static void Draw(RenderContext context)
         {
@@ -64,7 +69,7 @@ namespace Chroma.Plutonium
 
         public static void Update(float delta)
         {
-            NuklearAPI.SetDeltaTime(delta);
+            _nuklear.SetDeltaTime(delta);
         }
 
         public static void MousePressed(MouseButtonEventArgs e)
@@ -125,9 +130,7 @@ namespace Chroma.Plutonium
         public static void KeyReleased(KeyEventArgs e)
         {
             if (_keyLookup.ContainsKey(e.KeyCode))
-            {
                 _renderer.OnKey(_keyLookup[e.KeyCode], false);
-            }
         }
     }
 }

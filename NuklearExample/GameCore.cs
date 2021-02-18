@@ -22,7 +22,7 @@ namespace NuklearExample
 
         protected override void Draw(RenderContext context)
         {
-            NuklearGui.Frame(() =>
+            NuklearCore.Begin(() =>
             {
                 NuklearGui.Window(
                     "NuklearGUI for Chroma",

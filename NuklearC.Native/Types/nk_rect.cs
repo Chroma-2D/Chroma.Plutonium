@@ -6,22 +6,40 @@ namespace NuklearC.Native.Types
     [StructLayout(LayoutKind.Sequential)]
     public struct nk_rect
     {
-        public float X;
-        public float Y;
-        public float W;
-        public float H;
+        public float x;
+        public float y;
+        public float w;
+        public float h;
 
-        public nk_rect(float X, float Y, float W, float H)
+        public static implicit operator nk_rect(RectangleF rect)
         {
-            this.X = X;
-            this.Y = Y;
-            this.W = W;
-            this.H = H;
+            return new()
+            {
+                x = rect.X,
+                y = rect.Y,
+                w = rect.Width,
+                h = rect.Height
+            };
         }
 
-        public static implicit operator RectangleF(nk_rect r)
+        public static implicit operator Rectangle(nk_rect rect)
         {
-            return new(r.X, r.Y, r.W, r.H);
+            return new(
+                (int)rect.x,
+                (int)rect.y,
+                (int)rect.w,
+                (int)rect.h
+            );
+        }
+
+        public static implicit operator RectangleF(nk_rect rect)
+        {
+            return new(
+                rect.x,
+                rect.y,
+                rect.w,
+                rect.h
+            );
         }
     }
 }
