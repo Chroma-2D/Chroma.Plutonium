@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Chroma.Gui.Nuklear\Chroma.Gui.Nuklear.csproj" />
+      <ProjectReference Include="..\Chroma.Plutonium\Chroma.Plutonium.csproj" />
     </ItemGroup>
 
 </Project>

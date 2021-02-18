@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chroma.Plutonium", "Chroma.Plutonium\Chroma.Plutonium.csproj", "{62C2FE0B-4BBE-40B8-96EF-BAC4E505EBD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuklearExample", "NuklearExample\NuklearExample.csproj", "{DA544A8C-A70F-4411-9C0D-16E369B7AE84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuklearC.Native", "NuklearC.Native\NuklearC.Native.csproj", "{E89AF039-C9DC-458D-85DB-BA752FBB886C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuklearC.NativeAbstractionLayer", "NuklearC.NativeAbstractionLayer\NuklearC.NativeAbstractionLayer.csproj", "{3EF76EC6-EE3A-460A-A0CC-E6406C18A3E9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62C2FE0B-4BBE-40B8-96EF-BAC4E505EBD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C2FE0B-4BBE-40B8-96EF-BAC4E505EBD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C2FE0B-4BBE-40B8-96EF-BAC4E505EBD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C2FE0B-4BBE-40B8-96EF-BAC4E505EBD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA544A8C-A70F-4411-9C0D-16E369B7AE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA544A8C-A70F-4411-9C0D-16E369B7AE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA544A8C-A70F-4411-9C0D-16E369B7AE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA544A8C-A70F-4411-9C0D-16E369B7AE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E89AF039-C9DC-458D-85DB-BA752FBB886C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E89AF039-C9DC-458D-85DB-BA752FBB886C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E89AF039-C9DC-458D-85DB-BA752FBB886C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E89AF039-C9DC-458D-85DB-BA752FBB886C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF76EC6-EE3A-460A-A0CC-E6406C18A3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF76EC6-EE3A-460A-A0CC-E6406C18A3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF76EC6-EE3A-460A-A0CC-E6406C18A3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF76EC6-EE3A-460A-A0CC-E6406C18A3E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
